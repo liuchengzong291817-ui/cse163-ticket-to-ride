@@ -1,6 +1,6 @@
 # Learning Route Value to Improve a Ticket to Ride: Europe Optimizer
 
-This repository contains Chengzong Liu's CSE 163 final project for Summer
+Chengzong Liu's CSE 163 final project for Summer
 2026. The project combines three Ticket to Ride: Europe datasets, derives
 geographic and graph features for every destination ticket, evaluates
 leakage-free machine-learning models, and compares a printed-point optimizer
