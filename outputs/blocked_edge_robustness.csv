@@ -1,0 +1,11 @@
+method,blocked_source,blocked_target,base_ticket_points,post_hoc_ticket_points,post_hoc_retention,adaptive_ticket_points,adaptive_total_points,adaptive_trains_used
+Original baseline,Berlin,Frankfurt,95.0,95.0,1.0,95.0,162.0,44.0
+Original baseline,Frankfurt,Munchen,95.0,82.0,0.8631578947368421,98.0,165.0,44.0
+Original baseline,Pamplona,Paris,95.0,95.0,1.0,95.0,162.0,44.0
+Original baseline,Amsterdam,Frankfurt,95.0,95.0,1.0,95.0,162.0,44.0
+Original baseline,Athina,Smyrna,95.0,20.0,0.21052631578947367,103.0,176.0,45.0
+Learned revised,Berlin,Frankfurt,79.0,79.0,1.0,79.0,154.0,44.0
+Learned revised,Frankfurt,Munchen,79.0,79.0,1.0,79.0,154.0,44.0
+Learned revised,Pamplona,Paris,79.0,79.0,1.0,79.0,154.0,44.0
+Learned revised,Amsterdam,Frankfurt,79.0,79.0,1.0,79.0,154.0,44.0
+Learned revised,Athina,Smyrna,79.0,79.0,1.0,79.0,154.0,44.0

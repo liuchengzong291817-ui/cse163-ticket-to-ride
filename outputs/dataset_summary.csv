@@ -1,0 +1,5 @@
+dataset,rows,columns,missing_values
+cities.csv,47,3,0
+routes.csv,90,6,0
+destinations.csv,46,3,0
+combined feature table,46,20,0

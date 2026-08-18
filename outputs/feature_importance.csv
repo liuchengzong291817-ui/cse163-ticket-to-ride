@@ -1,0 +1,19 @@
+model,feature,measure,mean_importance,std_importance
+Random forest,equal_shortest_paths,held-out MAE increase,-0.0021966449147560224,0.005883879201878728
+Random forest,ferry_fraction,held-out MAE increase,0.0030360342768343085,0.009708004796815287
+Random forest,has_cut_edge,held-out MAE increase,0.0009037037037036974,0.0027413871443267334
+Random forest,intermediate_cities,held-out MAE increase,0.6194713693985153,0.3888301414031123
+Random forest,max_detour_trains,held-out MAE increase,-0.006302877607143611,0.009838537426887154
+Random forest,mean_edge_length,held-out MAE increase,0.014288642621792396,0.023848940168350072
+Random forest,shortest_trains,held-out MAE increase,1.9160851127344782,0.5740344350372327
+Random forest,straight_line_km,held-out MAE increase,0.7228556433416992,0.4933171853529837
+Random forest,tunnel_fraction,held-out MAE increase,0.018787724156611313,0.020118997660498357
+Ridge,equal_shortest_paths,standardized coefficient,0.06707804484737344,0.0323079009475687
+Ridge,ferry_fraction,standardized coefficient,-0.16861484529875603,0.07688790069266178
+Ridge,has_cut_edge,standardized coefficient,0.02936501036903917,0.03710241859061237
+Ridge,intermediate_cities,standardized coefficient,0.11237723721708617,0.6986623271952831
+Ridge,max_detour_trains,standardized coefficient,-0.0351901576525379,0.06011009311207452
+Ridge,mean_edge_length,standardized coefficient,-0.15300829957752474,0.21769321919056958
+Ridge,shortest_trains,standardized coefficient,3.919169159609134,0.9653407003032579
+Ridge,straight_line_km,standardized coefficient,0.5806784371266086,0.21831976320572372
+Ridge,tunnel_fraction,standardized coefficient,-0.1451401665922768,0.045475305706398884

@@ -1,0 +1,51 @@
+fold,model,ridge__alpha,max_depth,min_samples_leaf,n_estimators
+1,Ridge,0.1,,,
+1,Random forest,,5.0,1.0,300.0
+2,Ridge,0.1,,,
+2,Random forest,,5.0,1.0,100.0
+3,Ridge,0.01,,,
+3,Random forest,,,1.0,300.0
+4,Ridge,0.01,,,
+4,Random forest,,5.0,1.0,300.0
+5,Ridge,0.01,,,
+5,Random forest,,5.0,1.0,100.0
+6,Ridge,0.1,,,
+6,Random forest,,,1.0,100.0
+7,Ridge,0.1,,,
+7,Random forest,,5.0,1.0,100.0
+8,Ridge,0.01,,,
+8,Random forest,,,1.0,100.0
+9,Ridge,0.01,,,
+9,Random forest,,5.0,1.0,300.0
+10,Ridge,0.01,,,
+10,Random forest,,5.0,1.0,300.0
+11,Ridge,0.1,,,
+11,Random forest,,3.0,1.0,300.0
+12,Ridge,0.01,,,
+12,Random forest,,,1.0,300.0
+13,Ridge,0.01,,,
+13,Random forest,,3.0,2.0,100.0
+14,Ridge,0.1,,,
+14,Random forest,,5.0,1.0,300.0
+15,Ridge,0.01,,,
+15,Random forest,,,1.0,100.0
+16,Ridge,0.1,,,
+16,Random forest,,5.0,1.0,300.0
+17,Ridge,0.01,,,
+17,Random forest,,5.0,1.0,100.0
+18,Ridge,0.01,,,
+18,Random forest,,,1.0,100.0
+19,Ridge,0.01,,,
+19,Random forest,,5.0,1.0,100.0
+20,Ridge,0.1,,,
+20,Random forest,,5.0,1.0,300.0
+21,Ridge,1.0,,,
+21,Random forest,,5.0,1.0,300.0
+22,Ridge,0.1,,,
+22,Random forest,,,1.0,100.0
+23,Ridge,0.1,,,
+23,Random forest,,5.0,1.0,100.0
+24,Ridge,1.0,,,
+24,Random forest,,5.0,1.0,100.0
+25,Ridge,0.01,,,
+25,Random forest,,,1.0,300.0
