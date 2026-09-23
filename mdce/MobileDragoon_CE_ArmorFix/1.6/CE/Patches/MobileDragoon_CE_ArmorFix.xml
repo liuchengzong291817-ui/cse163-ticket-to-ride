@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Apply the fixed resolver to every Mobile Dragoon core, but not to other
+       equipment using Exosuit Framework. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[@Name="DMS_ModuleApparelCore"]</xpath>
+    <value>
+      <thingClass>MobileDragoonCEArmorFix.DragoonCoreCE</thingClass>
+    </value>
+  </Operation>
+
+  <!-- Preserve PV-4's original 20% sharp-armor lead over PV-8 on the CE scale:
+       47 * (144 / 120) = 56.4, rounded to 57 mm RHA. -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DMS_Apparel_PV4_Core"]/statBases/ArmorRating_Sharp</xpath>
+    <value>
+      <ArmorRating_Sharp>57</ArmorRating_Sharp>
+    </value>
+  </Operation>
+</Patch>
