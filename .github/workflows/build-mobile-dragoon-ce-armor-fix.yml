@@ -14,186 +14,55 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Restore source bundle
-        shell: pwsh
-        run: |
-          $bundle = @'
-          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
-          sXYmZ4+a2dOT4TdabKFsv4U5T9e8gAXkgKBSCGKVyjqDfviMPDdkIUpXpsyII8JgN/N+eE3uSLfX
-          u71KwPIwoD5fy/xcrjNJhhttamFDTzjmSShfNiErKZLVDiCZlBE9HO7pOYpPV/m+nfutT0cP+X7d
-          7qc1zd9hnW9QSwECFAMUAAAACACikjddA8CX3YoBAADoAgAARgAAAAAAAAAAAAAApIEAAAAATW9i
-          aWxlRHJhZ29vbl9DRV9Bcm1vckZpeC8xLjYvQ0UvUGF0Y2hlcy9Nb2JpbGVEcmFnb29uX0NFX0Fy
-          bW9yRml4LnhtbFBLAQIUAxQAAAAIAKKSN13KboEzBQIAAEYFAAApAAAAAAAAAAAAAACkge4BAABN
-          b2JpbGVEcmFnb29uX0NFX0FybW9yRml4L0Fib3V0L0Fib3V0LnhtbFBLAQIUAxQAAAAIALeSN13Q
-          wrbVtgAAAPMAAAAmAAAAAAAAAAAAAACkgToEAABNb2JpbGVEcmFnb29uX0NFX0FybW9yRml4L0NI
-          QU5HRUxPRy5tZFBLAQIUAxQAAAAIAKKSN13XrWychgAAALoAAAApAAAAAAAAAAAAAACkgTQFAABN
-          b2JpbGVEcmFnb29uX0NFX0FybW9yRml4L0xvYWRGb2xkZXJzLnhtbFBLAQIUAxQAAAAIALeSN10X
-          fbEpOwQAAEwIAAAjAAAAAAAAAAAAAACkgQEGAABNb2JpbGVEcmFnb29uX0NFX0FybW9yRml4L1JF
-          QURNRS5tZFBLAQIUAxQAAAAIALeSN10PZNkaKwEAAMsBAAApAAAAAAAAAAAAAACkgX0KAABNb2Jp
-          bGVEcmFnb29uX0NFX0FybW9yRml4L1NvdXJjZS9CVUlMRC5tZFBLAQIUAxQAAAAIALGSN11lX4t8
-          XgsAAKgtAAAxAAAAAAAAAAAAAACkge8LAABNb2JpbGVEcmFnb29uX0NFX0FybW9yRml4L1NvdXJj
-          ZS9EcmFnb29uQ29yZUNFLmNzUEsBAhQDFAAAAAgAopI3Xfce5oJxAQAARgMAAD8AAAAAAAAAAAAA
-          AKSBnBcAAE1vYmlsZURyYWdvb25fQ0VfQXJtb3JGaXgvU291cmNlL01vYmlsZURyYWdvb25DRUFy
-          bW9yRml4LmNzcHJvalBLBQYAAAAACAAIAOoCAABqGQAAAAA=
-          '@
-          $bundle = $bundle -replace "\s", ""
-          [IO.File]::WriteAllBytes("seed.zip", [Convert]::FromBase64String($bundle))
-          Expand-Archive -Path "seed.zip" -DestinationPath "work" -Force
-
-      - name: Download current Exosuit Framework assembly
-        shell: pwsh
-        run: |
-          $root = Join-Path $env:GITHUB_WORKSPACE "work\MobileDragoon_CE_ArmorFix"
-          New-Item -ItemType Directory -Force -Path (Join-Path $root "lib") | Out-Null
-          Invoke-WebRequest `
-            -Uri "https://raw.githubusercontent.com/AobaKuma/MechsuitFramework/main/1.6/Assemblies/Exosuit.dll" `
-            -OutFile (Join-Path $root "lib\Exosuit.dll")
-
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: "8.0.x"
 
+      - name: Download current Exosuit Framework assembly
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          New-Item -ItemType Directory -Force -Path "mdce/lib" | Out-Null
+          Invoke-WebRequest `
+            -Uri "https://raw.githubusercontent.com/AobaKuma/MechsuitFramework/main/1.6/Assemblies/Exosuit.dll" `
+            -OutFile "mdce/lib/Exosuit.dll"
+
       - name: Build DLL
         shell: pwsh
         run: |
-          $root = Join-Path $env:GITHUB_WORKSPACE "work\MobileDragoon_CE_ArmorFix"
-          dotnet restore (Join-Path $root "Source\MobileDragoonCEArmorFix.csproj")
-          dotnet build (Join-Path $root "Source\MobileDragoonCEArmorFix.csproj") `
+          $ErrorActionPreference = "Stop"
+          dotnet restore "mdce/Source/MobileDragoonCEArmorFix.csproj"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          dotnet build "mdce/Source/MobileDragoonCEArmorFix.csproj" `
             --configuration Release `
             --no-restore `
-            --output (Join-Path $root "build")
-          New-Item -ItemType Directory -Force -Path (Join-Path $root "1.6\CE\Assemblies") | Out-Null
-          Copy-Item `
-            (Join-Path $root "build\MobileDragoonCEArmorFix.dll") `
-            (Join-Path $root "1.6\CE\Assemblies\MobileDragoonCEArmorFix.dll") `
-            -Force
+            --output "mdce/build"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
-      - name: Package mod
+      - name: Assemble and validate mod
         shell: pwsh
         run: |
-          $root = Join-Path $env:GITHUB_WORKSPACE "work\MobileDragoon_CE_ArmorFix"
-          Remove-Item (Join-Path $root "lib") -Recurse -Force -ErrorAction SilentlyContinue
-          Remove-Item (Join-Path $root "build") -Recurse -Force -ErrorAction SilentlyContinue
-          Remove-Item (Join-Path $root "Source\bin") -Recurse -Force -ErrorAction SilentlyContinue
-          Remove-Item (Join-Path $root "Source\obj") -Recurse -Force -ErrorAction SilentlyContinue
+          $ErrorActionPreference = "Stop"
+          $modRoot = "mdce/MobileDragoon_CE_ArmorFix"
+          $assemblyDir = Join-Path $modRoot "1.6/CE/Assemblies"
+          New-Item -ItemType Directory -Force -Path $assemblyDir | Out-Null
+          Copy-Item `
+            "mdce/build/MobileDragoonCEArmorFix.dll" `
+            (Join-Path $assemblyDir "MobileDragoonCEArmorFix.dll") `
+            -Force
+          if (-not (Test-Path (Join-Path $assemblyDir "MobileDragoonCEArmorFix.dll"))) {
+            throw "Compiled DLL was not copied into the mod."
+          }
+          [xml](Get-Content (Join-Path $modRoot "About/About.xml")) | Out-Null
+          [xml](Get-Content (Join-Path $modRoot "LoadFolders.xml")) | Out-Null
+          [xml](Get-Content (Join-Path $modRoot "1.6/CE/Patches/MobileDragoon_CE_ArmorFix.xml")) | Out-Null
           Compress-Archive `
-            -Path $root `
-            -DestinationPath (Join-Path $env:GITHUB_WORKSPACE "MobileDragoon_CE_ArmorFix_1.0.0.zip") `
+            -Path $modRoot `
+            -DestinationPath "MobileDragoon_CE_ArmorFix_1.0.0.zip" `
             -Force
 
-      - name: Upload artifact
+      - name: Upload ready-to-use mod
         uses: actions/upload-artifact@v4
         with:
           name: MobileDragoon_CE_ArmorFix_1.0.0
