@@ -1,0 +1,43 @@
+{
+  "handcheck_sha256": "d018c79667f1724e2e0804229a158abfed23f318d8a993e5366171c99db62c90",
+  "normalized_json_reproduction_equal": true,
+  "all_depth_values_match_manual_table": true,
+  "mass_per_root_action_equals_one": true,
+  "focal_score_invariant_after_root_action": true,
+  "max_float_error_exact": "1/108086391056891904",
+  "sensitivity": [
+    {
+      "p": "39/100",
+      "values": {
+        "claim AB": "61/200",
+        "claim CD": "117/400",
+        "claim EF": "61/600",
+        "claim GH": "0",
+        "gather": "0"
+      }
+    },
+    {
+      "p": "2/5",
+      "values": {
+        "claim AB": "3/10",
+        "claim CD": "3/10",
+        "claim EF": "1/10",
+        "claim GH": "0",
+        "gather": "0"
+      }
+    },
+    {
+      "p": "41/100",
+      "values": {
+        "claim AB": "59/200",
+        "claim CD": "123/400",
+        "claim EF": "59/600",
+        "claim GH": "0",
+        "gather": "0"
+      }
+    }
+  ],
+  "frozen_multiplayer_sources_unchanged": true,
+  "independent_test_scenarios_used": false,
+  "no_sampling": true
+}

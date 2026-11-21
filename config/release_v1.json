@@ -1,0 +1,38 @@
+{
+  "release_id": "competitive_research_v1_2026_11_14",
+  "scope": "Reproducible four-player simplified research model, not full Europe rules.",
+  "master_seed": 20261114,
+  "monte_carlo": {
+    "case": "research_design/endgame_depth_v1/case.json",
+    "depths": [0, 1, 2, 3],
+    "samples_per_action": [1, 4, 16, 64, 256],
+    "independent_algorithm_repeats": 128,
+    "bootstrap_resamples": 2000,
+    "coupling": "Same world draws and per-sample opponent seeds across actions, depths and nested budgets; correct marginal distributions.",
+    "arithmetic": "Fraction for sampled utilities and estimates; float accumulation on identical samples is diagnostic only.",
+    "budget_unit": "Actual game state transitions, including root moves; excludes scoring, RNG and validation overhead.",
+    "case_role": "Previously observed teaching case. Repeats are algorithmic random streams, not independent game scenarios."
+  },
+  "competition": {
+    "development_deal_seeds": [101, 202, 303],
+    "previously_observed_deal_seeds": [101, 202, 303, 10001, 10002, 10003, 10004],
+    "evaluation_deal_seeds": [10005,10006,10007,10008,10009,10010,10011,10012,10013,10014,10015,10016,10017,10018,10019,10020,10021,10022,10023,10024,10025,10026,10027,10028,10029,10030,10031,10032,10033,10034,10035,10036,10037,10038,10039,10040],
+    "starting_players": [0, 1, 2, 3],
+    "focal_seats": [0, 1, 2, 3],
+    "random_replicates": [0, 1, 2, 3],
+    "opponent_profiles": ["replan", "random"],
+    "focal_policies": ["random", "replan", "bottleneck"],
+    "comparisons": ["bottleneck-minus-replan", "random-minus-replan"],
+    "primary_metric": "win_credit",
+    "auxiliary_metrics": ["margin_to_best_opponent", "score", "completed_count", "failed_ticket_points"],
+    "bootstrap_resamples": 4000,
+    "bootstrap_unit": "Whole initial-deal block; average replicates, focal seats and starting players within each deal first.",
+    "seed_pairing": "Opponent seat RNG seeds derive only from master, deal, starting player, replicate and seat, independent of the focal method.",
+    "reuse": "Reuse deterministic games and all-same-policy baseline games; reused rows are not independent observations.",
+    "overlap_rule": "Retain all predetermined draws; report repeated full-hand partitions and overlap with observed cases without selecting by outcomes.",
+    "budget_alignment": "Same initial tickets, rules, train/resource budgets and game termination. Heuristic CPU/path-query costs differ and are not claimed equal.",
+    "inference": "Exploratory percentile block-bootstrap intervals conditional on this synthetic deal generator and fixed map; no confirmatory significance or real-game claim."
+  },
+  "post_result_rule": "Do not tune policies or change this design after viewing evaluation outcomes. New study versions require new declared inputs.",
+  "runtime_reference": "Python 3.12.14"
+}

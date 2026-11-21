@@ -1,0 +1,2057 @@
+{
+  "case_id": "constructed_endgame_depth_v1",
+  "purpose": "Hand-constructed teaching and method-design case; never an independent performance sample.",
+  "python_version": "3.12.14",
+  "case_sha256": "b48f76bc74e30ad98025e45424159abd91e70f4c303e378161ab57a4f738dba8",
+  "checker_sha256": "dd89d4ce831b69d9467eea71c7d86836458ffbc13a39e91177952444e56f7a6c",
+  "engine_sha256": {
+    "game.py": "40770ade68719dca3c8212373087e526b95e25c6cab4cc13dfba50f9a3b072e7",
+    "policies.py": "385939cd20c825f81c9ad9fecde54e0b22f02197523c258a704d489fdcb4490a"
+  },
+  "public_root_observation": {
+    "player_id": 0,
+    "rules": {
+      "player_count": 4,
+      "initial_trains": 4,
+      "initial_resources": 4,
+      "resource_cap": 8,
+      "gather_amount": 2,
+      "final_threshold": 1
+    },
+    "routes": [
+      {
+        "route_id": "OA",
+        "source": "O",
+        "target": "A",
+        "length": 2,
+        "parallel_group": null
+      },
+      {
+        "route_id": "AB",
+        "source": "A",
+        "target": "B",
+        "length": 1,
+        "parallel_group": null
+      },
+      {
+        "route_id": "BE",
+        "source": "B",
+        "target": "E",
+        "length": 4,
+        "parallel_group": null
+      },
+      {
+        "route_id": "CD",
+        "source": "C",
+        "target": "D",
+        "length": 2,
+        "parallel_group": null
+      },
+      {
+        "route_id": "DE",
+        "source": "D",
+        "target": "E",
+        "length": 1,
+        "parallel_group": null
+      },
+      {
+        "route_id": "EF",
+        "source": "E",
+        "target": "F",
+        "length": 1,
+        "parallel_group": null
+      },
+      {
+        "route_id": "FG",
+        "source": "F",
+        "target": "G",
+        "length": 1,
+        "parallel_group": null
+      },
+      {
+        "route_id": "GH",
+        "source": "G",
+        "target": "H",
+        "length": 1,
+        "parallel_group": null
+      },
+      {
+        "route_id": "NO",
+        "source": "N",
+        "target": "O",
+        "length": 3,
+        "parallel_group": null
+      }
+    ],
+    "owners": [
+      0,
+      null,
+      null,
+      null,
+      1,
+      null,
+      2,
+      null,
+      3
+    ],
+    "players": [
+      {
+        "trains": 2,
+        "resources": 2,
+        "route_points": 2,
+        "ticket_count": 1
+      },
+      {
+        "trains": 3,
+        "resources": 3,
+        "route_points": 1,
+        "ticket_count": 1
+      },
+      {
+        "trains": 3,
+        "resources": 3,
+        "route_points": 1,
+        "ticket_count": 0
+      },
+      {
+        "trains": 1,
+        "resources": 1,
+        "route_points": 4,
+        "ticket_count": 1
+      }
+    ],
+    "own_tickets": [
+      {
+        "ticket_id": "P0-OB",
+        "source": "O",
+        "target": "B",
+        "points": 1
+      }
+    ],
+    "current_player": 0,
+    "turn": 4,
+    "final_turns_remaining": 4,
+    "consecutive_passes": 0,
+    "finished": false,
+    "end_reason": null
+  },
+  "identical_public_prefix_in_both_worlds": [
+    {
+      "turn": 1,
+      "player_id": 0,
+      "action": {
+        "kind": "claim",
+        "route_id": "OA"
+      },
+      "trains_after": 2,
+      "resources_after": 2,
+      "route_points_after": 2,
+      "final_turns_remaining": null,
+      "end_reason": null
+    },
+    {
+      "turn": 2,
+      "player_id": 1,
+      "action": {
+        "kind": "claim",
+        "route_id": "DE"
+      },
+      "trains_after": 3,
+      "resources_after": 3,
+      "route_points_after": 1,
+      "final_turns_remaining": null,
+      "end_reason": null
+    },
+    {
+      "turn": 3,
+      "player_id": 2,
+      "action": {
+        "kind": "claim",
+        "route_id": "FG"
+      },
+      "trains_after": 3,
+      "resources_after": 3,
+      "route_points_after": 1,
+      "final_turns_remaining": null,
+      "end_reason": null
+    },
+    {
+      "turn": 4,
+      "player_id": 3,
+      "action": {
+        "kind": "claim",
+        "route_id": "NO"
+      },
+      "trains_after": 1,
+      "resources_after": 1,
+      "route_points_after": 4,
+      "final_turns_remaining": 4,
+      "end_reason": null
+    }
+  ],
+  "rows": [
+    {
+      "action": "claim AB",
+      "Q_h": [
+        "1",
+        "1/4",
+        "1/4",
+        "1/4"
+      ],
+      "Q_ref": "1/4",
+      "conditional_Q_ref": {
+        "H": "0",
+        "L": "1/2"
+      },
+      "float_error": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "action": "claim CD",
+      "Q_h": [
+        "1",
+        "1/2",
+        "1/2",
+        "3/8"
+      ],
+      "Q_ref": "3/8",
+      "conditional_Q_ref": {
+        "H": "3/4",
+        "L": "0"
+      },
+      "float_error": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "action": "claim EF",
+      "Q_h": [
+        "1/2",
+        "1/4",
+        "1/6",
+        "1/12"
+      ],
+      "Q_ref": "1/12",
+      "conditional_Q_ref": {
+        "H": "0",
+        "L": "1/6"
+      },
+      "float_error": [
+        "0",
+        "0",
+        "-1/108086391056891904",
+        "-1/216172782113783808"
+      ]
+    },
+    {
+      "action": "claim GH",
+      "Q_h": [
+        "1/2",
+        "0",
+        "0",
+        "0"
+      ],
+      "Q_ref": "0",
+      "conditional_Q_ref": {
+        "H": "0",
+        "L": "0"
+      },
+      "float_error": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "action": "gather",
+      "Q_h": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "Q_ref": "0",
+      "conditional_Q_ref": {
+        "H": "0",
+        "L": "0"
+      },
+      "float_error": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    }
+  ],
+  "depths": [
+    {
+      "h": 0,
+      "max_abs_error": "3/4",
+      "maximizing_actions": [
+        "claim AB",
+        "claim CD"
+      ],
+      "selected_action": "claim AB",
+      "regret": "1/8"
+    },
+    {
+      "h": 1,
+      "max_abs_error": "1/6",
+      "maximizing_actions": [
+        "claim CD"
+      ],
+      "selected_action": "claim CD",
+      "regret": "0"
+    },
+    {
+      "h": 2,
+      "max_abs_error": "1/8",
+      "maximizing_actions": [
+        "claim CD"
+      ],
+      "selected_action": "claim CD",
+      "regret": "0"
+    },
+    {
+      "h": 3,
+      "max_abs_error": "0",
+      "maximizing_actions": [
+        "claim CD"
+      ],
+      "selected_action": "claim CD",
+      "regret": "0"
+    }
+  ],
+  "terminal_leaves": [
+    {
+      "action": "claim AB",
+      "world": "H",
+      "joint_probability": "1/4",
+      "events": [
+        {
+          "turn": 5,
+          "player_id": 0,
+          "action": {
+            "kind": "claim",
+            "route_id": "AB"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 3,
+          "end_reason": null
+        },
+        {
+          "turn": 6,
+          "player_id": 1,
+          "action": {
+            "kind": "claim",
+            "route_id": "CD"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 2,
+          "end_reason": null
+        },
+        {
+          "turn": 7,
+          "player_id": 2,
+          "action": {
+            "kind": "claim",
+            "route_id": "EF"
+          },
+          "trains_after": 2,
+          "resources_after": 2,
+          "route_points_after": 2,
+          "final_turns_remaining": 1,
+          "end_reason": null
+        },
+        {
+          "turn": 8,
+          "player_id": 3,
+          "action": {
+            "kind": "claim",
+            "route_id": "GH"
+          },
+          "trains_after": 0,
+          "resources_after": 0,
+          "route_points_after": 5,
+          "final_turns_remaining": 0,
+          "end_reason": "final_round"
+        }
+      ],
+      "scores_and_completed": [
+        [
+          4,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "utility": "0"
+    },
+    {
+      "action": "claim AB",
+      "world": "H",
+      "joint_probability": "1/4",
+      "events": [
+        {
+          "turn": 5,
+          "player_id": 0,
+          "action": {
+            "kind": "claim",
+            "route_id": "AB"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 3,
+          "end_reason": null
+        },
+        {
+          "turn": 6,
+          "player_id": 1,
+          "action": {
+            "kind": "claim",
+            "route_id": "CD"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 2,
+          "end_reason": null
+        },
+        {
+          "turn": 7,
+          "player_id": 2,
+          "action": {
+            "kind": "claim",
+            "route_id": "EF"
+          },
+          "trains_after": 2,
+          "resources_after": 2,
+          "route_points_after": 2,
+          "final_turns_remaining": 1,
+          "end_reason": null
+        },
+        {
+          "turn": 8,
+          "player_id": 3,
+          "action": {
+            "kind": "gather",
+            "route_id": null
+          },
+          "trains_after": 1,
+          "resources_after": 3,
+          "route_points_after": 4,
+          "final_turns_remaining": 0,
+          "end_reason": "final_round"
+        }
+      ],
+      "scores_and_completed": [
+        [
+          4,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "utility": "0"
+    },
+    {
+      "action": "claim AB",
+      "world": "L",
+      "joint_probability": "1/4",
+      "events": [
+        {
+          "turn": 5,
+          "player_id": 0,
+          "action": {
+            "kind": "claim",
+            "route_id": "AB"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 3,
+          "end_reason": null
+        },
+        {
+          "turn": 6,
+          "player_id": 1,
+          "action": {
+            "kind": "claim",
+            "route_id": "EF"
+          },
+          "trains_after": 2,
+          "resources_after": 2,
+          "route_points_after": 2,
+          "final_turns_remaining": 2,
+          "end_reason": null
+        },
+        {
+          "turn": 7,
+          "player_id": 2,
+          "action": {
+            "kind": "claim",
+            "route_id": "CD"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 1,
+          "end_reason": null
+        },
+        {
+          "turn": 8,
+          "player_id": 3,
+          "action": {
+            "kind": "claim",
+            "route_id": "GH"
+          },
+          "trains_after": 0,
+          "resources_after": 0,
+          "route_points_after": 5,
+          "final_turns_remaining": 0,
+          "end_reason": "final_round"
+        }
+      ],
+      "scores_and_completed": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "utility": "1/2"
+    },
+    {
+      "action": "claim AB",
+      "world": "L",
+      "joint_probability": "1/4",
+      "events": [
+        {
+          "turn": 5,
+          "player_id": 0,
+          "action": {
+            "kind": "claim",
+            "route_id": "AB"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 3,
+          "end_reason": null
+        },
+        {
+          "turn": 6,
+          "player_id": 1,
+          "action": {
+            "kind": "claim",
+            "route_id": "EF"
+          },
+          "trains_after": 2,
+          "resources_after": 2,
+          "route_points_after": 2,
+          "final_turns_remaining": 2,
+          "end_reason": null
+        },
+        {
+          "turn": 7,
+          "player_id": 2,
+          "action": {
+            "kind": "claim",
+            "route_id": "CD"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 1,
+          "end_reason": null
+        },
+        {
+          "turn": 8,
+          "player_id": 3,
+          "action": {
+            "kind": "gather",
+            "route_id": null
+          },
+          "trains_after": 1,
+          "resources_after": 3,
+          "route_points_after": 4,
+          "final_turns_remaining": 0,
+          "end_reason": "final_round"
+        }
+      ],
+      "scores_and_completed": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "utility": "1/2"
+    },
+    {
+      "action": "claim CD",
+      "world": "H",
+      "joint_probability": "1/4",
+      "events": [
+        {
+          "turn": 5,
+          "player_id": 0,
+          "action": {
+            "kind": "claim",
+            "route_id": "CD"
+          },
+          "trains_after": 0,
+          "resources_after": 0,
+          "route_points_after": 4,
+          "final_turns_remaining": 3,
+          "end_reason": null
+        },
+        {
+          "turn": 6,
+          "player_id": 1,
+          "action": {
+            "kind": "claim",
+            "route_id": "AB"
+          },
+          "trains_after": 2,
+          "resources_after": 2,
+          "route_points_after": 2,
+          "final_turns_remaining": 2,
+          "end_reason": null
+        },
+        {
+          "turn": 7,
+          "player_id": 2,
+          "action": {
+            "kind": "claim",
+            "route_id": "EF"
+          },
+          "trains_after": 2,
+          "resources_after": 2,
+          "route_points_after": 2,
+          "final_turns_remaining": 1,
+          "end_reason": null
+        },
+        {
+          "turn": 8,
+          "player_id": 3,
+          "action": {
+            "kind": "claim",
+            "route_id": "GH"
+          },
+          "trains_after": 0,
+          "resources_after": 0,
+          "route_points_after": 5,
+          "final_turns_remaining": 0,
+          "end_reason": "final_round"
+        }
+      ],
+      "scores_and_completed": [
+        [
+          3,
+          0
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "utility": "1/2"
+    },
+    {
+      "action": "claim CD",
+      "world": "H",
+      "joint_probability": "1/4",
+      "events": [
+        {
+          "turn": 5,
+          "player_id": 0,
+          "action": {
+            "kind": "claim",
+            "route_id": "CD"
+          },
+          "trains_after": 0,
+          "resources_after": 0,
+          "route_points_after": 4,
+          "final_turns_remaining": 3,
+          "end_reason": null
+        },
+        {
+          "turn": 6,
+          "player_id": 1,
+          "action": {
+            "kind": "claim",
+            "route_id": "AB"
+          },
+          "trains_after": 2,
+          "resources_after": 2,
+          "route_points_after": 2,
+          "final_turns_remaining": 2,
+          "end_reason": null
+        },
+        {
+          "turn": 7,
+          "player_id": 2,
+          "action": {
+            "kind": "claim",
+            "route_id": "EF"
+          },
+          "trains_after": 2,
+          "resources_after": 2,
+          "route_points_after": 2,
+          "final_turns_remaining": 1,
+          "end_reason": null
+        },
+        {
+          "turn": 8,
+          "player_id": 3,
+          "action": {
+            "kind": "gather",
+            "route_id": null
+          },
+          "trains_after": 1,
+          "resources_after": 3,
+          "route_points_after": 4,
+          "final_turns_remaining": 0,
+          "end_reason": "final_round"
+        }
+      ],
+      "scores_and_completed": [
+        [
+          3,
+          0
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "utility": "1"
+    },
+    {
+      "action": "claim CD",
+      "world": "L",
+      "joint_probability": "1/4",
+      "events": [
+        {
+          "turn": 5,
+          "player_id": 0,
+          "action": {
+            "kind": "claim",
+            "route_id": "CD"
+          },
+          "trains_after": 0,
+          "resources_after": 0,
+          "route_points_after": 4,
+          "final_turns_remaining": 3,
+          "end_reason": null
+        },
+        {
+          "turn": 6,
+          "player_id": 1,
+          "action": {
+            "kind": "claim",
+            "route_id": "EF"
+          },
+          "trains_after": 2,
+          "resources_after": 2,
+          "route_points_after": 2,
+          "final_turns_remaining": 2,
+          "end_reason": null
+        },
+        {
+          "turn": 7,
+          "player_id": 2,
+          "action": {
+            "kind": "claim",
+            "route_id": "AB"
+          },
+          "trains_after": 2,
+          "resources_after": 2,
+          "route_points_after": 2,
+          "final_turns_remaining": 1,
+          "end_reason": null
+        },
+        {
+          "turn": 8,
+          "player_id": 3,
+          "action": {
+            "kind": "claim",
+            "route_id": "GH"
+          },
+          "trains_after": 0,
+          "resources_after": 0,
+          "route_points_after": 5,
+          "final_turns_remaining": 0,
+          "end_reason": "final_round"
+        }
+      ],
+      "scores_and_completed": [
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "utility": "0"
+    },
+    {
+      "action": "claim CD",
+      "world": "L",
+      "joint_probability": "1/4",
+      "events": [
+        {
+          "turn": 5,
+          "player_id": 0,
+          "action": {
+            "kind": "claim",
+            "route_id": "CD"
+          },
+          "trains_after": 0,
+          "resources_after": 0,
+          "route_points_after": 4,
+          "final_turns_remaining": 3,
+          "end_reason": null
+        },
+        {
+          "turn": 6,
+          "player_id": 1,
+          "action": {
+            "kind": "claim",
+            "route_id": "EF"
+          },
+          "trains_after": 2,
+          "resources_after": 2,
+          "route_points_after": 2,
+          "final_turns_remaining": 2,
+          "end_reason": null
+        },
+        {
+          "turn": 7,
+          "player_id": 2,
+          "action": {
+            "kind": "claim",
+            "route_id": "AB"
+          },
+          "trains_after": 2,
+          "resources_after": 2,
+          "route_points_after": 2,
+          "final_turns_remaining": 1,
+          "end_reason": null
+        },
+        {
+          "turn": 8,
+          "player_id": 3,
+          "action": {
+            "kind": "gather",
+            "route_id": null
+          },
+          "trains_after": 1,
+          "resources_after": 3,
+          "route_points_after": 4,
+          "final_turns_remaining": 0,
+          "end_reason": "final_round"
+        }
+      ],
+      "scores_and_completed": [
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "utility": "0"
+    },
+    {
+      "action": "claim EF",
+      "world": "H",
+      "joint_probability": "1/4",
+      "events": [
+        {
+          "turn": 5,
+          "player_id": 0,
+          "action": {
+            "kind": "claim",
+            "route_id": "EF"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 3,
+          "end_reason": null
+        },
+        {
+          "turn": 6,
+          "player_id": 1,
+          "action": {
+            "kind": "claim",
+            "route_id": "CD"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 2,
+          "end_reason": null
+        },
+        {
+          "turn": 7,
+          "player_id": 2,
+          "action": {
+            "kind": "claim",
+            "route_id": "AB"
+          },
+          "trains_after": 2,
+          "resources_after": 2,
+          "route_points_after": 2,
+          "final_turns_remaining": 1,
+          "end_reason": null
+        },
+        {
+          "turn": 8,
+          "player_id": 3,
+          "action": {
+            "kind": "claim",
+            "route_id": "GH"
+          },
+          "trains_after": 0,
+          "resources_after": 0,
+          "route_points_after": 5,
+          "final_turns_remaining": 0,
+          "end_reason": "final_round"
+        }
+      ],
+      "scores_and_completed": [
+        [
+          2,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "utility": "0"
+    },
+    {
+      "action": "claim EF",
+      "world": "H",
+      "joint_probability": "1/4",
+      "events": [
+        {
+          "turn": 5,
+          "player_id": 0,
+          "action": {
+            "kind": "claim",
+            "route_id": "EF"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 3,
+          "end_reason": null
+        },
+        {
+          "turn": 6,
+          "player_id": 1,
+          "action": {
+            "kind": "claim",
+            "route_id": "CD"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 2,
+          "end_reason": null
+        },
+        {
+          "turn": 7,
+          "player_id": 2,
+          "action": {
+            "kind": "claim",
+            "route_id": "AB"
+          },
+          "trains_after": 2,
+          "resources_after": 2,
+          "route_points_after": 2,
+          "final_turns_remaining": 1,
+          "end_reason": null
+        },
+        {
+          "turn": 8,
+          "player_id": 3,
+          "action": {
+            "kind": "gather",
+            "route_id": null
+          },
+          "trains_after": 1,
+          "resources_after": 3,
+          "route_points_after": 4,
+          "final_turns_remaining": 0,
+          "end_reason": "final_round"
+        }
+      ],
+      "scores_and_completed": [
+        [
+          2,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "utility": "0"
+    },
+    {
+      "action": "claim EF",
+      "world": "L",
+      "joint_probability": "1/4",
+      "events": [
+        {
+          "turn": 5,
+          "player_id": 0,
+          "action": {
+            "kind": "claim",
+            "route_id": "EF"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 3,
+          "end_reason": null
+        },
+        {
+          "turn": 6,
+          "player_id": 1,
+          "action": {
+            "kind": "claim",
+            "route_id": "CD"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 2,
+          "end_reason": null
+        },
+        {
+          "turn": 7,
+          "player_id": 2,
+          "action": {
+            "kind": "claim",
+            "route_id": "AB"
+          },
+          "trains_after": 2,
+          "resources_after": 2,
+          "route_points_after": 2,
+          "final_turns_remaining": 1,
+          "end_reason": null
+        },
+        {
+          "turn": 8,
+          "player_id": 3,
+          "action": {
+            "kind": "claim",
+            "route_id": "GH"
+          },
+          "trains_after": 0,
+          "resources_after": 0,
+          "route_points_after": 5,
+          "final_turns_remaining": 0,
+          "end_reason": "final_round"
+        }
+      ],
+      "scores_and_completed": [
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "utility": "0"
+    },
+    {
+      "action": "claim EF",
+      "world": "L",
+      "joint_probability": "1/4",
+      "events": [
+        {
+          "turn": 5,
+          "player_id": 0,
+          "action": {
+            "kind": "claim",
+            "route_id": "EF"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 3,
+          "end_reason": null
+        },
+        {
+          "turn": 6,
+          "player_id": 1,
+          "action": {
+            "kind": "claim",
+            "route_id": "CD"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 2,
+          "end_reason": null
+        },
+        {
+          "turn": 7,
+          "player_id": 2,
+          "action": {
+            "kind": "claim",
+            "route_id": "AB"
+          },
+          "trains_after": 2,
+          "resources_after": 2,
+          "route_points_after": 2,
+          "final_turns_remaining": 1,
+          "end_reason": null
+        },
+        {
+          "turn": 8,
+          "player_id": 3,
+          "action": {
+            "kind": "gather",
+            "route_id": null
+          },
+          "trains_after": 1,
+          "resources_after": 3,
+          "route_points_after": 4,
+          "final_turns_remaining": 0,
+          "end_reason": "final_round"
+        }
+      ],
+      "scores_and_completed": [
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "utility": "1/3"
+    },
+    {
+      "action": "claim GH",
+      "world": "H",
+      "joint_probability": "1/4",
+      "events": [
+        {
+          "turn": 5,
+          "player_id": 0,
+          "action": {
+            "kind": "claim",
+            "route_id": "GH"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 3,
+          "end_reason": null
+        },
+        {
+          "turn": 6,
+          "player_id": 1,
+          "action": {
+            "kind": "claim",
+            "route_id": "CD"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 2,
+          "end_reason": null
+        },
+        {
+          "turn": 7,
+          "player_id": 2,
+          "action": {
+            "kind": "claim",
+            "route_id": "AB"
+          },
+          "trains_after": 2,
+          "resources_after": 2,
+          "route_points_after": 2,
+          "final_turns_remaining": 1,
+          "end_reason": null
+        },
+        {
+          "turn": 8,
+          "player_id": 3,
+          "action": {
+            "kind": "claim",
+            "route_id": "EF"
+          },
+          "trains_after": 0,
+          "resources_after": 0,
+          "route_points_after": 5,
+          "final_turns_remaining": 0,
+          "end_reason": "final_round"
+        }
+      ],
+      "scores_and_completed": [
+        [
+          2,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "utility": "0"
+    },
+    {
+      "action": "claim GH",
+      "world": "H",
+      "joint_probability": "1/4",
+      "events": [
+        {
+          "turn": 5,
+          "player_id": 0,
+          "action": {
+            "kind": "claim",
+            "route_id": "GH"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 3,
+          "end_reason": null
+        },
+        {
+          "turn": 6,
+          "player_id": 1,
+          "action": {
+            "kind": "claim",
+            "route_id": "CD"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 2,
+          "end_reason": null
+        },
+        {
+          "turn": 7,
+          "player_id": 2,
+          "action": {
+            "kind": "claim",
+            "route_id": "AB"
+          },
+          "trains_after": 2,
+          "resources_after": 2,
+          "route_points_after": 2,
+          "final_turns_remaining": 1,
+          "end_reason": null
+        },
+        {
+          "turn": 8,
+          "player_id": 3,
+          "action": {
+            "kind": "gather",
+            "route_id": null
+          },
+          "trains_after": 1,
+          "resources_after": 3,
+          "route_points_after": 4,
+          "final_turns_remaining": 0,
+          "end_reason": "final_round"
+        }
+      ],
+      "scores_and_completed": [
+        [
+          2,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "utility": "0"
+    },
+    {
+      "action": "claim GH",
+      "world": "L",
+      "joint_probability": "1/4",
+      "events": [
+        {
+          "turn": 5,
+          "player_id": 0,
+          "action": {
+            "kind": "claim",
+            "route_id": "GH"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 3,
+          "end_reason": null
+        },
+        {
+          "turn": 6,
+          "player_id": 1,
+          "action": {
+            "kind": "claim",
+            "route_id": "EF"
+          },
+          "trains_after": 2,
+          "resources_after": 2,
+          "route_points_after": 2,
+          "final_turns_remaining": 2,
+          "end_reason": null
+        },
+        {
+          "turn": 7,
+          "player_id": 2,
+          "action": {
+            "kind": "claim",
+            "route_id": "CD"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 1,
+          "end_reason": null
+        },
+        {
+          "turn": 8,
+          "player_id": 3,
+          "action": {
+            "kind": "claim",
+            "route_id": "AB"
+          },
+          "trains_after": 0,
+          "resources_after": 0,
+          "route_points_after": 5,
+          "final_turns_remaining": 0,
+          "end_reason": "final_round"
+        }
+      ],
+      "scores_and_completed": [
+        [
+          2,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "utility": "0"
+    },
+    {
+      "action": "claim GH",
+      "world": "L",
+      "joint_probability": "1/4",
+      "events": [
+        {
+          "turn": 5,
+          "player_id": 0,
+          "action": {
+            "kind": "claim",
+            "route_id": "GH"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 3,
+          "end_reason": null
+        },
+        {
+          "turn": 6,
+          "player_id": 1,
+          "action": {
+            "kind": "claim",
+            "route_id": "EF"
+          },
+          "trains_after": 2,
+          "resources_after": 2,
+          "route_points_after": 2,
+          "final_turns_remaining": 2,
+          "end_reason": null
+        },
+        {
+          "turn": 7,
+          "player_id": 2,
+          "action": {
+            "kind": "claim",
+            "route_id": "CD"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 1,
+          "end_reason": null
+        },
+        {
+          "turn": 8,
+          "player_id": 3,
+          "action": {
+            "kind": "gather",
+            "route_id": null
+          },
+          "trains_after": 1,
+          "resources_after": 3,
+          "route_points_after": 4,
+          "final_turns_remaining": 0,
+          "end_reason": "final_round"
+        }
+      ],
+      "scores_and_completed": [
+        [
+          2,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "utility": "0"
+    },
+    {
+      "action": "gather",
+      "world": "H",
+      "joint_probability": "1/6",
+      "events": [
+        {
+          "turn": 5,
+          "player_id": 0,
+          "action": {
+            "kind": "gather",
+            "route_id": null
+          },
+          "trains_after": 2,
+          "resources_after": 4,
+          "route_points_after": 2,
+          "final_turns_remaining": 3,
+          "end_reason": null
+        },
+        {
+          "turn": 6,
+          "player_id": 1,
+          "action": {
+            "kind": "claim",
+            "route_id": "CD"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 2,
+          "end_reason": null
+        },
+        {
+          "turn": 7,
+          "player_id": 2,
+          "action": {
+            "kind": "claim",
+            "route_id": "AB"
+          },
+          "trains_after": 2,
+          "resources_after": 2,
+          "route_points_after": 2,
+          "final_turns_remaining": 1,
+          "end_reason": null
+        },
+        {
+          "turn": 8,
+          "player_id": 3,
+          "action": {
+            "kind": "claim",
+            "route_id": "EF"
+          },
+          "trains_after": 0,
+          "resources_after": 0,
+          "route_points_after": 5,
+          "final_turns_remaining": 0,
+          "end_reason": "final_round"
+        }
+      ],
+      "scores_and_completed": [
+        [
+          1,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "utility": "0"
+    },
+    {
+      "action": "gather",
+      "world": "H",
+      "joint_probability": "1/6",
+      "events": [
+        {
+          "turn": 5,
+          "player_id": 0,
+          "action": {
+            "kind": "gather",
+            "route_id": null
+          },
+          "trains_after": 2,
+          "resources_after": 4,
+          "route_points_after": 2,
+          "final_turns_remaining": 3,
+          "end_reason": null
+        },
+        {
+          "turn": 6,
+          "player_id": 1,
+          "action": {
+            "kind": "claim",
+            "route_id": "CD"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 2,
+          "end_reason": null
+        },
+        {
+          "turn": 7,
+          "player_id": 2,
+          "action": {
+            "kind": "claim",
+            "route_id": "AB"
+          },
+          "trains_after": 2,
+          "resources_after": 2,
+          "route_points_after": 2,
+          "final_turns_remaining": 1,
+          "end_reason": null
+        },
+        {
+          "turn": 8,
+          "player_id": 3,
+          "action": {
+            "kind": "claim",
+            "route_id": "GH"
+          },
+          "trains_after": 0,
+          "resources_after": 0,
+          "route_points_after": 5,
+          "final_turns_remaining": 0,
+          "end_reason": "final_round"
+        }
+      ],
+      "scores_and_completed": [
+        [
+          1,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "utility": "0"
+    },
+    {
+      "action": "gather",
+      "world": "H",
+      "joint_probability": "1/6",
+      "events": [
+        {
+          "turn": 5,
+          "player_id": 0,
+          "action": {
+            "kind": "gather",
+            "route_id": null
+          },
+          "trains_after": 2,
+          "resources_after": 4,
+          "route_points_after": 2,
+          "final_turns_remaining": 3,
+          "end_reason": null
+        },
+        {
+          "turn": 6,
+          "player_id": 1,
+          "action": {
+            "kind": "claim",
+            "route_id": "CD"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 2,
+          "end_reason": null
+        },
+        {
+          "turn": 7,
+          "player_id": 2,
+          "action": {
+            "kind": "claim",
+            "route_id": "AB"
+          },
+          "trains_after": 2,
+          "resources_after": 2,
+          "route_points_after": 2,
+          "final_turns_remaining": 1,
+          "end_reason": null
+        },
+        {
+          "turn": 8,
+          "player_id": 3,
+          "action": {
+            "kind": "gather",
+            "route_id": null
+          },
+          "trains_after": 1,
+          "resources_after": 3,
+          "route_points_after": 4,
+          "final_turns_remaining": 0,
+          "end_reason": "final_round"
+        }
+      ],
+      "scores_and_completed": [
+        [
+          1,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "utility": "0"
+    },
+    {
+      "action": "gather",
+      "world": "L",
+      "joint_probability": "1/6",
+      "events": [
+        {
+          "turn": 5,
+          "player_id": 0,
+          "action": {
+            "kind": "gather",
+            "route_id": null
+          },
+          "trains_after": 2,
+          "resources_after": 4,
+          "route_points_after": 2,
+          "final_turns_remaining": 3,
+          "end_reason": null
+        },
+        {
+          "turn": 6,
+          "player_id": 1,
+          "action": {
+            "kind": "claim",
+            "route_id": "EF"
+          },
+          "trains_after": 2,
+          "resources_after": 2,
+          "route_points_after": 2,
+          "final_turns_remaining": 2,
+          "end_reason": null
+        },
+        {
+          "turn": 7,
+          "player_id": 2,
+          "action": {
+            "kind": "claim",
+            "route_id": "CD"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 1,
+          "end_reason": null
+        },
+        {
+          "turn": 8,
+          "player_id": 3,
+          "action": {
+            "kind": "claim",
+            "route_id": "AB"
+          },
+          "trains_after": 0,
+          "resources_after": 0,
+          "route_points_after": 5,
+          "final_turns_remaining": 0,
+          "end_reason": "final_round"
+        }
+      ],
+      "scores_and_completed": [
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "utility": "0"
+    },
+    {
+      "action": "gather",
+      "world": "L",
+      "joint_probability": "1/6",
+      "events": [
+        {
+          "turn": 5,
+          "player_id": 0,
+          "action": {
+            "kind": "gather",
+            "route_id": null
+          },
+          "trains_after": 2,
+          "resources_after": 4,
+          "route_points_after": 2,
+          "final_turns_remaining": 3,
+          "end_reason": null
+        },
+        {
+          "turn": 6,
+          "player_id": 1,
+          "action": {
+            "kind": "claim",
+            "route_id": "EF"
+          },
+          "trains_after": 2,
+          "resources_after": 2,
+          "route_points_after": 2,
+          "final_turns_remaining": 2,
+          "end_reason": null
+        },
+        {
+          "turn": 7,
+          "player_id": 2,
+          "action": {
+            "kind": "claim",
+            "route_id": "CD"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 1,
+          "end_reason": null
+        },
+        {
+          "turn": 8,
+          "player_id": 3,
+          "action": {
+            "kind": "claim",
+            "route_id": "GH"
+          },
+          "trains_after": 0,
+          "resources_after": 0,
+          "route_points_after": 5,
+          "final_turns_remaining": 0,
+          "end_reason": "final_round"
+        }
+      ],
+      "scores_and_completed": [
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "utility": "0"
+    },
+    {
+      "action": "gather",
+      "world": "L",
+      "joint_probability": "1/6",
+      "events": [
+        {
+          "turn": 5,
+          "player_id": 0,
+          "action": {
+            "kind": "gather",
+            "route_id": null
+          },
+          "trains_after": 2,
+          "resources_after": 4,
+          "route_points_after": 2,
+          "final_turns_remaining": 3,
+          "end_reason": null
+        },
+        {
+          "turn": 6,
+          "player_id": 1,
+          "action": {
+            "kind": "claim",
+            "route_id": "EF"
+          },
+          "trains_after": 2,
+          "resources_after": 2,
+          "route_points_after": 2,
+          "final_turns_remaining": 2,
+          "end_reason": null
+        },
+        {
+          "turn": 7,
+          "player_id": 2,
+          "action": {
+            "kind": "claim",
+            "route_id": "CD"
+          },
+          "trains_after": 1,
+          "resources_after": 1,
+          "route_points_after": 3,
+          "final_turns_remaining": 1,
+          "end_reason": null
+        },
+        {
+          "turn": 8,
+          "player_id": 3,
+          "action": {
+            "kind": "gather",
+            "route_id": null
+          },
+          "trains_after": 1,
+          "resources_after": 3,
+          "route_points_after": 4,
+          "final_turns_remaining": 0,
+          "end_reason": "final_round"
+        }
+      ],
+      "scores_and_completed": [
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "utility": "0"
+    }
+  ],
+  "terminal_leaf_count": 22,
+  "transitions_excluding_setup": 52,
+  "root_observation_equal": true,
+  "all_hand_predictions_match": true,
+  "sampling_used": false,
+  "independent_test_cases_used": false
+}

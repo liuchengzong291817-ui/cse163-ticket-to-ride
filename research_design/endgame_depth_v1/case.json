@@ -1,0 +1,52 @@
+{
+  "case_id": "constructed_endgame_depth_v1",
+  "purpose": "Hand-constructed teaching and method-design case; never an independent performance sample.",
+  "rules": {
+    "player_count": 4,
+    "initial_trains": 4,
+    "initial_resources": 4,
+    "resource_cap": 8,
+    "gather_amount": 2,
+    "final_threshold": 1
+  },
+  "routes": [
+    {"route_id": "OA", "source": "O", "target": "A", "length": 2},
+    {"route_id": "AB", "source": "A", "target": "B", "length": 1},
+    {"route_id": "BE", "source": "B", "target": "E", "length": 4},
+    {"route_id": "CD", "source": "C", "target": "D", "length": 2},
+    {"route_id": "DE", "source": "D", "target": "E", "length": 1},
+    {"route_id": "EF", "source": "E", "target": "F", "length": 1},
+    {"route_id": "FG", "source": "F", "target": "G", "length": 1},
+    {"route_id": "GH", "source": "G", "target": "H", "length": 1},
+    {"route_id": "NO", "source": "N", "target": "O", "length": 3}
+  ],
+  "fixed_tickets": {
+    "0": [{"ticket_id": "P0-OB", "source": "O", "target": "B", "points": 1}],
+    "2": [],
+    "3": [{"ticket_id": "P3-NB", "source": "N", "target": "B", "points": 2}]
+  },
+  "hidden_worlds": [
+    {"id": "H", "probability": "1/2", "player_1_tickets": [
+      {"ticket_id": "P1-CE", "source": "C", "target": "E", "points": 3}
+    ]},
+    {"id": "L", "probability": "1/2", "player_1_tickets": [
+      {"ticket_id": "P1-DF", "source": "D", "target": "F", "points": 2}
+    ]}
+  ],
+  "public_prefix": [
+    {"player_id": 0, "action": {"kind": "claim", "route_id": "OA"}},
+    {"player_id": 1, "action": {"kind": "claim", "route_id": "DE"}},
+    {"player_id": 2, "action": {"kind": "claim", "route_id": "FG"}},
+    {"player_id": 3, "action": {"kind": "claim", "route_id": "NO"}}
+  ],
+  "prefix_generation": "A prescribed legal public setup independent of the hidden world; endgame policies apply only after this prefix.",
+  "focal_player": 0,
+  "opponent_policies_after_prefix": {"1": "ReplanningGreedyPolicy", "2": "ReplanningGreedyPolicy", "3": "ideal uniform distribution over current legal actions"},
+  "belief_assumptions": "Only P1 has two possible ticket assignments in this artificial belief. P3's private NB ticket has point-mass belief; it is not publicly revealed by game rules. Do not condition the focal decision on the actual hidden world.",
+  "utility": "Final victory share: score then completed-ticket tiebreak, then 1/k for joint winners.",
+  "cutoff": "Counterfactual settlement of current ownership in each hypothetical world, averaged over belief; never mark a live game finished.",
+  "depth": "h counts opponent actions after the root action: 0, 1, 2, 3; all games finish at h=3.",
+  "root_actions": "All legal actions, sorted by (kind, route_id or empty); maximize belief-averaged value before applying this deterministic tie order.",
+  "reference": "Enumerate every world and every legal P3 action with fractions.Fraction; no sampling or RNG seeds.",
+  "hand_predictions_before_engine_check": {"claim AB": "1/4", "claim CD": "3/8", "claim EF": "1/12", "claim GH": "0", "gather": "0"}
+}

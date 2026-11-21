@@ -1,0 +1,22 @@
+{
+  "created_utc": "2026-11-14T03:34:15.440874+00:00",
+  "protocol_sha256": "d63ea4d0f419b905bf7d9d83e4dcfc196fff983c923c066397686b3eb2502f83",
+  "case_sha256": "b48f76bc74e30ad98025e45424159abd91e70f4c303e378161ab57a4f738dba8",
+  "sources_sha256": {
+    "__init__.py": "bc21891a0a0cb60881a5aa08d0dfdeec4c2f2bf813bc2e786744a2e56dcd1604",
+    "game.py": "40770ade68719dca3c8212373087e526b95e25c6cab4cc13dfba50f9a3b072e7",
+    "policies.py": "385939cd20c825f81c9ad9fecde54e0b22f02197523c258a704d489fdcb4490a",
+    "bottleneck.py": "8650846fe0d96c3533bedea847f6760a892f9133220a52f2e3fd356e9eb5b4bd",
+    "demo.py": "1e4561ecda709a9a58319f4cb3a73c81dab8586104f45b94f0c9e62ee3b4605c",
+    "evaluate.py": "0f9f35823cd8d3549bbb40fdb5d7374509247bef3022c94250dfaacc5ec15271",
+    "endgame.py": "babda9bf14caca80cb25f7d6f9feb3df6276a72c01517755d2e7d4584fb69cfa",
+    "endgame_experiment.py": "2d5d74ad04cea02f07300d0b886912ed13d14ac4fd4cb4015e2d25a5cb12a872",
+    "release_common.py": "4fc2699d95846220dcfd517564710623a555f86c93fc093f98a89ad376b1915f",
+    "mc_experiment.py": "da6b81298794db48255f709db991ff8209b834f7c0ed1569a0c55b934a583394",
+    "competition_experiment.py": "9b68015161bcfcf2fef0fd82c11b18157e4f1dc41a999f0a9ed9c0519191cbe6",
+    "release_verify.py": "b06bfba55f2ffdef865036d0ff9f1cc0ba2c3cf464acad147a2a5f5f863d9136",
+    "reproduce.py": "8e9b6301b47e9d74e5a35ac97a1112408415fd5e37fc65a4595325d3c0c4ff76"
+  },
+  "python_version": "3.12.14",
+  "purpose": "Local design freeze before evaluation, not formal preregistration or proof of confirmatory validity."
+}
